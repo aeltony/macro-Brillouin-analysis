@@ -10,14 +10,6 @@ import Plotting
 import os
 
 path = '/Users/ame38/Downloads/2022-05-26/'
-# path = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/Data/' + \
-#         'Sensitivity/2022-02-11/'
-# path = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/Data/' + \
-#         'Porcine limbus and sclera/2022-02-10/'
-# session = 'Cuvette_sensitivity'
-# session = 'Exposure_time_water'
-# session = 'Calibration_example'
-# session = 'Rb_vapor_extinction'
 session = 'Porcine_globe'
 
 fullPath = path + session + '/'
@@ -148,67 +140,3 @@ if saveFig:
         os.makedirs(fullPath + exp + '/' + scan + '/')
 
 Plotting.plotBrightfield(path, rawData, exp, scan, saveFig)
-
-#%%
-###### Fit A-line shapes and plot angle-dep.for porcine cornea ######
-import CornealAnisotropy
-
-# Exp's to plot
-exps = list(rawData.keys())
-exps = exps[1:]
-
-CornealAnisotropy.fitPorcineAngle(fullPath, rawData, procData, exps)
-
-#%%
-###### Plot aggregate porcine cornea angle data ######
-import CornealAnisotropy
-
-fullPath = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/' + \
-            'Projects/Anisotropy of cornea/2021 New Data/Porcine angle/' + \
-            'Porcine_angle_data_3var.txt'
-
-CornealAnisotropy.plotAggregateAngleData(fullPath)
-
-#%%
-###### Fit A-line shapes for all scans in Brillouin map (single exp) ######
-import CornealAnisotropy
-
-# Exp to plot
-exp = 'Exp_1'
-
-CornealAnisotropy.fitPorcineMap(fullPath, rawData, procData, exp)
-
-#%%
-###### Plot aggregate porcine globe map data ######
-import CornealAnisotropy
-
-fullPath = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/' + \
-        'Projects/Anisotropy of cornea/2021 New Data/Porcine maps/' + \
-        'Porcine_map_data_3var.txt'
-
-CornealAnisotropy.plotAggregateMapData(fullPath)
-
-#%%
-###### Plot human map data ######
-import CornealAnisotropy
-
-path = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/Projects/' + \
-        'Anisotropy of cornea/2021 New Data/Human maps/'
-
-# session = 'DB-right' # Figure 4A
-# session = 'P10002OS-Scaled' # Figure 4B
-# session = 'P10201-OS' # Figure 4C
-session = 'P10200-OS' # Figure 4D
-
-CornealAnisotropy.fitHumanMap(path, session)
-
-#%%
-###### Calculate aggregate human map data ######
-import CornealAnisotropy
-
-fullPath = '/Users/ame38/Dropbox (Partners HealthCare)/Bio-Optics Lab/Projects/' + \
-        'Anisotropy of cornea/2021 New Data/Human maps/' + \
-        'Human_map_data_3var.txt'
-
-CornealAnisotropy.plotAggregateHumanData(fullPath)
-
