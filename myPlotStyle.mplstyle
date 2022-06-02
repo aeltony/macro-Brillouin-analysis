@@ -1,0 +1,48 @@
+# Amira's matplotlib style sheet - 04/2021
+
+font.family:  Helvetica
+font.style:   normal
+font.variant: normal
+font.weight:  normal
+font.stretch: normal
+font.size:    10
+
+text.color: black
+
+lines.linewidth:       1.5         # line width in points
+lines.linestyle:       -           # solid line
+lines.color:           C0          # has no affect on plot(); see axes.prop_cycle
+lines.marker:          None        # the default marker
+lines.markerfacecolor: auto        # the default marker face color
+lines.markeredgecolor: auto        # the default marker edge color
+lines.markeredgewidth: 1.0         # the line width around the marker symbol
+lines.markersize:      4           # marker size, in points
+
+axes.facecolor:     white   # axes background color
+axes.edgecolor:     black   # axes edge color
+axes.linewidth:     0.8     # edge line width
+axes.grid:          True    # display grid or not
+axes.grid.axis:     both    # which axis the grid should apply to
+axes.grid.which:    major   # grid lines at {major, minor, both} ticks
+axes.titlelocation: center  # alignment of the title: {left, right, center}
+axes.titlesize:     10      # font size of the axes title
+axes.labelsize:     10      # font size of the x and y labels
+axes.labelcolor:    black   # color of the axes label
+
+xtick.color:         black   # color of the ticks
+xtick.labelsize:     10      # font size of the tick labels
+ytick.color:         black   # color of the ticks
+ytick.labelsize:     10      # font size of the tick labels
+
+grid.color:     b0b0b0  # grid color
+grid.linestyle: -       # solid
+grid.linewidth: 0.5     # in points
+grid.alpha:     1.0     # transparency, between 0.0 and 1.0
+
+errorbar.capsize: 10  # length of end cap on error bars in pixels
+
+legend.loc:         best
+legend.frameon:     False    # if True, draw the legend on a background patch
+legend.edgecolor:   0.8      # background patch boundary color
+legend.markerscale: 1.0      # the relative size of legend markers vs. original
+legend.fontsize:    10
